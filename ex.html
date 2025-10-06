@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Form Validation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="p-4">
+
+  <h3>Registration Form</h3>
+
+  <form id="myForm" class="w-50">
+    <!-- First Name -->
+    <div class="mb-3">
+      <label for="fname" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="fname" placeholder="Enter First Name">
+    </div>
+
+    <!-- Last Name -->
+    <div class="mb-3">
+      <label for="lname" class="form-label">Last Name</label>
+      <input type="text" class="form-control" id="lname" placeholder="Enter Last Name">
+    </div>
+
+    <!-- Email -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="text" class="form-control" id="email" placeholder="Enter Email">
+    </div>
+
+    <!-- Password -->
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter Password">
+    </div>
+
+    <button type="button" class="btn btn-success" onclick="validateForm()">Submit</button>
+  </form>
+
+    <script>
+    function validateForm() 
+    {
+
+      let fname = document.getElementById("fname").value.trim();
+      let lname = document.getElementById("lname").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let password = document.getElementById("password").value.trim();
+
+      if (fname.length < 3)
+       {
+        alert("First name must be at least 3 letters");
+        return;
+      }
+
+      if (lname.length < 3) 
+      {
+        alert("Last name must be at least 3 letters");
+        return;
+      }
+
+      // Expected email and password
+      let expectedEmail = fname.substring(0, 3).toLowerCase() + "@143";
+      let expectedPassword = lname.substring(0, 3).toLowerCase() + "143";
+
+      if (email !== expectedEmail) 
+      {
+        alert("Email must be: " + expectedEmail);
+        return;
+      }
+
+      if (password !== expectedPassword) {
+        alert("Password must be: " + expectedPassword);
+        return;
+      }
+
+      alert("✅ Form submitted successfully!");
+    }
+  </script>
+
+</body>
+</html>

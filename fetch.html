@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIS</title>
+
+
+    <style>
+
+
+        table,tr,th,td{
+            border: 1px, solid, black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--     <button onclick="getJoke()">GET JOKE 
+
+    </button>
+    <h1>Joke : <span id="myh1"></span></h1>
+    
+
+
+    <script>
+
+
+        function getJoke() {
+            fetch(`https://api.chucknorris.io/jokes/random`)
+                .then((result) => result.json())
+                .then((data) => { 
+                        document.getElementById('myh1').innerHTML=data.value;
+                 })
+        }
+
+
+    </script>
+
+ -->
+    
+
+    
+    <button onclick="userdata()">Display Data</button>
+       <div id="details"></div>
+
+    <script>
+
+        var users, str;
+        function userdata() {
+            fetch('https://jsonplaceholder.typicode.com/users')
+                .then((result) => result.json())
+                .then((data) => {
+                
+                
+                  str="<table> <tr> <th> Sno </th> <th> name</th> <th> phone </th>"
+
+                        for(let u of data)
+                    {
+                        str+=`
+                        <tr>
+                           <td>${(u.id)}</td> 
+                            <td>${(u.name)}</td>  
+                            <td>${(u.phone)}</td> 
+                        </tr>`
+                    }
+                    
+                            str+="</table>"
+                    document.getElementById("details").innerHTML=str;
+
+                })
+            }
+        
+    </script>
+</body>
+
+</html>

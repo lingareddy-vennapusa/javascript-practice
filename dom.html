@@ -1,0 +1,59 @@
+//Dom - document object model
+// it is a programming interfac to access the html elements on the document
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+
+    <h1 id="myh1">Hello</h1>
+    <h1 class="wish">World</h1>
+    <h1 class="wish">good morning</h1>
+    <p class="wish">Lorem ipsum dolor sit ere cum aut impedit vel sed.</p>
+
+
+    <script>
+        function display() {
+            //var h1=document.getElementById("myh1");    
+            //h1.style.color="red";
+
+
+            /*   var h1 = document.getElementsByTagName("h1");
+            h1[0].style.color = "blue ";
+            h1[1].style.color = "grey";
+            h1[2].style.color = "green";
+                */
+
+
+            /* 
+            var h1 = document.getElementsByClassName("wish");
+            h1[0].style.color = "blue ";
+            h1[1].style.color = "grey";
+            h1[2].style.color = "green"; */
+
+            
+             /* 
+             var h1=document.querySelector("h1.wish");
+            h1.style.backgroundColor="red";
+               */
+
+              var h1= document.querySelectorAll("h1.wish")
+            h1[0].style.color = "blue ";
+            h1[1].style.color = "red";
+            h1[2].style.color = "green"; 
+        }
+        display();
+
+
+
+    </script>
+
+</body>
+
+</html>
